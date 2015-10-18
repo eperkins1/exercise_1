@@ -301,7 +301,55 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Timely_And_Effective_Care_State';
 
+DROP TABLE readmissions_deaths_state;
+CREATE EXTERNAL TABLE `readmissions_deaths_state`(
+  `state` string COMMENT 'from deserializer', 
+  `measure_name` string COMMENT 'from deserializer', 
+  `measure_id` string COMMENT 'from deserializer', 
+  `num_hospitals_worse` string COMMENT 'from deserializer',
+  `num_hospitals_same` string COMMENT 'from deserializer',
+  `num_hospitals_better` string COMMENT 'from deserializer',
+  `num_hospitals_too_few` string COMMENT 'from deserializer', 
+  `footnote` string COMMENT 'from deserializer', 
+  `measure_start_date` string COMMENT 'from deserializer', 
+  `measure_end_date` string COMMENT 'from deserializer')
+ROW FORMAT SERDE 
+  'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  'hdfs://localhost:8020/data/w205/hospital_files/Readmissions_And_Deaths_State';
 
+DROP TABLE readmissions_deaths_hospital;
+CREATE EXTERNAL TABLE `readmissions_deaths_hospital`(
+  `provider_id` string COMMENT 'from deserializer', 
+  `hospital_name` string COMMENT 'from deserializer',
+  `address` string COMMENT 'from deserializer',
+  `city` string COMMENT 'from deserializer',
+  `state` string COMMENT 'from deserializer',
+  `zip` string COMMENT 'from deserializer',
+  `county` string COMMENT 'from deserializer',
+  `phone` string COMMENT 'from deserializer', 
+  `measure_name` string COMMENT 'from deserializer', 
+  `measure_id` string COMMENT 'from deserializer',
+  `compared_to_national` string COMMENT 'from deserializer',
+  `denominator` string COMMENT 'from deserializer', 
+  `score` string COMMENT 'from deserializer',
+  `lower_estimate` string COMMENT 'from deserializer',
+  `higher_estimate` string COMMENT 'from deserializer', 
+  `footnote` string COMMENT 'from deserializer', 
+  `measure_start_date` string COMMENT 'from deserializer', 
+  `measure_end_date` string COMMENT 'from deserializer')
+ROW FORMAT SERDE 
+  'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  'hdfs://localhost:8020/data/w205/hospital_files/Readmissions_And_Deaths_Hospital';
 
 
 
