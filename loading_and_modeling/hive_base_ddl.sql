@@ -18,6 +18,7 @@ CREATE EXTERNAL TABLE `complic_hos`(
   `footnote` string COMMENT 'from deserializer', 
   `measure_start_date` string COMMENT 'from deserializer', 
   `measure_end_date` string COMMENT 'from deserializer')
+PARTITIONED BY ('provider_id' string)
 ROW FORMAT SERDE 
   'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
 STORED AS INPUTFORMAT 
