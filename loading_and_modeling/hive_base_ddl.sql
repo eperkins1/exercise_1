@@ -1,6 +1,5 @@
 DROP TABLE complic_hos;
 CREATE EXTERNAL TABLE `complic_hos`(
-  `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
   `city` string COMMENT 'from deserializer', 
