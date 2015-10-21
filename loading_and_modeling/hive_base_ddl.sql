@@ -322,8 +322,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Readmissions_And_Deaths_State';
 
-DROP TABLE readmissions_deaths_hospital;
-CREATE EXTERNAL TABLE `readmissions_deaths_hospital`(
+DROP TABLE readmis_hos;
+CREATE EXTERNAL TABLE `readmis_hos`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer',
   `address` string COMMENT 'from deserializer',
@@ -350,6 +350,50 @@ OUTPUTFORMAT
   'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Readmissions_And_Deaths_Hospital';
+
+DROP TABLE survey_results;
+CREATE EXTERNAL TABLE `survey_results`(
+  `provider_id` string COMMENT 'from deserializer', 
+  `hospital_name` string COMMENT 'from deserializer',
+  `address` string COMMENT 'from deserializer',
+  `city` string COMMENT 'from deserializer',
+  `state` string COMMENT 'from deserializer',
+  `zip` string COMMENT 'from deserializer',
+  `county` string COMMENT 'from deserializer',
+  `com_nurse_achieve` string COMMENT 'from deserializer',
+  `com_nurse_improve` string COMMENT 'from deserializer',
+  `com_nurse_dimension` string COMMENT 'from deserializer',
+  `com_doc_acheive` string COMMENT 'from deserializer',
+  `com_doc_improve` string COMMENT 'from deserializer',
+  `com_doc_dimension` string COMMENT 'from deserializer',
+  `hos_staff_achieve` string COMMENT 'from deserializer',
+  `hos_staff_improve` string COMMENT 'from deserializer',
+  `hos_staff_dimension` string COMMENT 'from deserializer',
+  `paid_man_achieve` string COMMENT 'from deserializer',
+  `paid_man_improve` string COMMENT 'from deserializer',
+  `paid_man_dimension` string COMMENT 'from deserializer',
+  `com_med_achieve` string COMMENT 'from deserializer',
+  `com_med_improve` string COMMENT 'from deserializer',
+  `com_med_dimension` string COMMENT 'from deserializer',
+  `clean_quiet_achieve` string COMMENT 'from deserializer',
+  `clean_quiet_improve` string COMMENT 'from deserializer',
+  `clean_quiet_dimension` string COMMENT 'from deserializer',
+  `discharge_achieve` string COMMENT 'from deserializer',
+  `discharge_improve` string COMMENT 'from deserializer',
+  `discharge_dimension` string COMMENT 'from deserializer',
+  `overall_achieve` string COMMENT 'from deserializer',
+  `overall_improve` string COMMENT 'from deserializer',
+  `overall_dimension` string COMMENT 'from deserializer',
+  `hcahps_base_score` string COMMENT 'from deserializer',
+  `hcahps_consistency_score` string COMMENT 'from deserializer')
+ROW FORMAT SERDE 
+  'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  'hdfs://localhost:8020/data/w205/hospital_files/Survey_Results';
 
 
 
