@@ -1,5 +1,5 @@
-DROP TABLE complications_hospital;
-CREATE EXTERNAL TABLE `complications_hospital`(
+DROP TABLE complic_hos;
+CREATE EXTERNAL TABLE `complic_hos`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
@@ -27,8 +27,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Complications_Hospital';
 
-DROP TABLE complications_state;
-CREATE EXTERNAL TABLE `complications_state`(
+DROP TABLE complic_state;
+CREATE EXTERNAL TABLE `complic_state`(
   `state` string COMMENT 'from deserializer', 
   `measure_name` string COMMENT 'from deserializer', 
   `measure_id` string COMMENT 'from deserializer', 
@@ -47,8 +47,8 @@ LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Complications_State';  
 
 
-DROP TABLE hainfections_hospital;
-CREATE EXTERNAL TABLE `hainfections_hospital`(
+DROP TABLE hai_hos;
+CREATE EXTERNAL TABLE `hai_hos`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
@@ -73,8 +73,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Healthcare_Associated_Infections_Hospital'; 
 
-DROP TABLE hainfections_state;
-CREATE EXTERNAL TABLE `hainfections_state`(
+DROP TABLE hai_state;
+CREATE EXTERNAL TABLE `hai_state`(
   `state` string COMMENT 'from deserializer', 
   `measure_name` string COMMENT 'from deserializer', 
   `measure_id` string COMMENT 'from deserializer', 
@@ -110,8 +110,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/HCAPS_State';
 
-DROP TABLE hcahps_hospital;
-CREATE EXTERNAL TABLE `hcahps_hospital`(
+DROP TABLE hcahps_hos;
+CREATE EXTERNAL TABLE `hcahps_hos`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
@@ -142,8 +142,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/HCAPS_Hospital';
 
-DROP TABLE hospital_general_info;
-CREATE EXTERNAL TABLE `hospital_general_info`(
+DROP TABLE hospitals;
+CREATE EXTERNAL TABLE `hospitals`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
@@ -180,8 +180,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Measure_Dates';
 
-DROP TABLE payment_hospital;
-CREATE EXTERNAL TABLE `payment_hospital`(
+DROP TABLE payment_hos;
+CREATE EXTERNAL TABLE `payment_hos`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
@@ -230,8 +230,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Payment_State';
 
-DROP TABLE structural_measures_hospital;
-CREATE EXTERNAL TABLE `structural_measures_hospital`(
+DROP TABLE struct_measures_hos;
+CREATE EXTERNAL TABLE `struct_measures_hos`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
@@ -255,8 +255,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Structural_Measures_Hospital';
 
-DROP TABLE timely_care_hospital;
-CREATE EXTERNAL TABLE `timely_care_hospital`(
+DROP TABLE timely_care_hos;
+CREATE EXTERNAL TABLE `timely_care_hos`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
@@ -301,8 +301,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Timely_And_Effective_Care_State';
 
-DROP TABLE readmissions_deaths_state;
-CREATE EXTERNAL TABLE `readmissions_deaths_state`(
+DROP TABLE readmis_state;
+CREATE EXTERNAL TABLE `readmis_state`(
   `state` string COMMENT 'from deserializer', 
   `measure_name` string COMMENT 'from deserializer', 
   `measure_id` string COMMENT 'from deserializer', 
