@@ -6,5 +6,4 @@ DROP TABLE hospitals_old;
 ALTER TABLE hospitals RENAME TO hospitals_old;
 ALTER TABLE hospitals_new RENAME TO hospitals;
 
----
 
