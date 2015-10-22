@@ -14,3 +14,9 @@ rm -r header_gone
 
 #Loading files from AMI into HDFS
 sudo -u hdfs hdfs dfs -put ~/w205/exercise_1/hospital_files/* hdfs:/data/w205/hospital_files/
+
+#Loading specific files into their own directories:
+As w205 in AMI
+For each to-be-hive-tabeled csv file$ in hdfs:
+	hdfs dfs -mkdir /data/w205/hospital_files/<file$_without_.csv>
+	hdfs dfs -mv /data/w205/hospital_files/file$ /data/w205/hospital_files/<file$_without_.csv>/file$
