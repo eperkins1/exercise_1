@@ -324,7 +324,7 @@ DROP TABLE readmis_national;
 CREATE EXTERNAL TABLE `readmis_national`(
   `measure_name` string COMMENT 'from deserializer', 
   `measure_id` string COMMENT 'from deserializer', 
-  'national_rate' string COMMENT 'from deserializer', 
+  `national_rate` string COMMENT 'from deserializer', 
   `num_hospitals_worse` string COMMENT 'from deserializer',
   `num_hospitals_same` string COMMENT 'from deserializer',
   `num_hospitals_better` string COMMENT 'from deserializer',
@@ -345,7 +345,7 @@ DROP TABLE complic_national;
 CREATE EXTERNAL TABLE `complic_national`(
   `measure_name` string COMMENT 'from deserializer', 
   `measure_id` string COMMENT 'from deserializer',
-  'national_rate' string COMMENT 'from deserializer', 
+  `national_rate` string COMMENT 'from deserializer', 
   `num_hospitals_worse` string COMMENT 'from deserializer',
   `num_hospitals_same` string COMMENT 'from deserializer',
   `num_hospitals_better` string COMMENT 'from deserializer',
