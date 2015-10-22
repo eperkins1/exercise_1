@@ -1,5 +1,6 @@
 DROP TABLE complic_hos;
 CREATE EXTERNAL TABLE `complic_hos`(
+  `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
   `city` string COMMENT 'from deserializer', 
@@ -17,7 +18,6 @@ CREATE EXTERNAL TABLE `complic_hos`(
   `footnote` string COMMENT 'from deserializer', 
   `measure_start_date` string COMMENT 'from deserializer', 
   `measure_end_date` string COMMENT 'from deserializer')
-PARTITIONED BY ('provider_id' string)
 ROW FORMAT SERDE 
   'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
 STORED AS INPUTFORMAT 
