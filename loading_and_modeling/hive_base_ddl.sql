@@ -288,7 +288,7 @@ CREATE EXTERNAL TABLE `survey_results`(
   `com_nurse_achieve` string COMMENT 'from deserializer',
   `com_nurse_improve` string COMMENT 'from deserializer',
   `com_nurse_dimension` string COMMENT 'from deserializer',
-  `com_doc_acheive` string COMMENT 'from deserializer',
+  `com_doc_achieve` string COMMENT 'from deserializer',
   `com_doc_improve` string COMMENT 'from deserializer',
   `com_doc_dimension` string COMMENT 'from deserializer',
   `hos_staff_achieve` string COMMENT 'from deserializer',
