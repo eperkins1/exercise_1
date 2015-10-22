@@ -3,9 +3,8 @@ DROP TABLE procedures;
 CREATE TABLE procedures AS
 SELECT DISTINCT measure_id
 FROM (
-    SELECT DISTINCT measure_id
-    FROM timely_national
-    UNION ALL
-    SELECT DISTINCT measure_id
-    FROM measure_dates
- );
+SELECT DISTINCT measure_id
+FROM timely_national
+UNION ALL
+SELECT DISTINCT measure_id
+FROM measure_dates);
