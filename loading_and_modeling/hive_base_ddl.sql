@@ -180,83 +180,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Measure_Dates';
 
-DROP TABLE payment_hos;
-CREATE EXTERNAL TABLE `payment_hos`(
-  `provider_id` string COMMENT 'from deserializer', 
-  `hospital_name` string COMMENT 'from deserializer', 
-  `address` string COMMENT 'from deserializer', 
-  `city` string COMMENT 'from deserializer', 
-  `state` string COMMENT 'from deserializer', 
-  `zip` string COMMENT 'from deserializer', 
-  `county` string COMMENT 'from deserializer', 
-  `phone` string COMMENT 'from deserializer', 
-  `measure_name` string COMMENT 'from deserializer', 
-  `measure_id` string COMMENT 'from deserializer', 
-  `category` string COMMENT 'from deserializer', 
-  `denominator` string COMMENT 'from deserializer', 
-  `payment` string COMMENT 'from deserializer', 
-  `lower_estimate` string COMMENT 'from deserializer', 
-  `higher_estimate` string COMMENT 'from deserializer', 
-  `footnote` string COMMENT 'from deserializer', 
-  `measure_start_date` string COMMENT 'from deserializer', 
-  `measure_end_date` string COMMENT 'from deserializer')
-ROW FORMAT SERDE 
-  'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
-STORED AS INPUTFORMAT 
-  'org.apache.hadoop.mapred.TextInputFormat' 
-OUTPUTFORMAT 
-  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
-LOCATION
-  'hdfs://localhost:8020/data/w205/hospital_files/Payment_Hospital';
-
-DROP TABLE payment_state;
-CREATE EXTERNAL TABLE `payment_state`(
-  `state` string COMMENT 'from deserializer', 
-  `measure_name` string COMMENT 'from deserializer', 
-  `measure_id` string COMMENT 'from deserializer', 
-  `num_hospitals_less_than` string COMMENT 'from deserializer', 
-  `num_hospitals_same` string COMMENT 'from deserializer', 
-  `num_hospitals_greater_than` string COMMENT 'from deserializer', 
-  `num_hospitals_too_few` string COMMENT 'from deserializer', 
-  `footnote` string COMMENT 'from deserializer', 
-  `measure_start_date` string COMMENT 'from deserializer', 
-  `measure_end_date` string COMMENT 'from deserializer')
-ROW FORMAT SERDE 
-  'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
-STORED AS INPUTFORMAT 
-  'org.apache.hadoop.mapred.TextInputFormat' 
-OUTPUTFORMAT 
-  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
-LOCATION
-  'hdfs://localhost:8020/data/w205/hospital_files/Payment_State';
-
-DROP TABLE struct_measures_hos;
-CREATE EXTERNAL TABLE `struct_measures_hos`(
-  `provider_id` string COMMENT 'from deserializer', 
-  `hospital_name` string COMMENT 'from deserializer', 
-  `address` string COMMENT 'from deserializer', 
-  `city` string COMMENT 'from deserializer', 
-  `state` string COMMENT 'from deserializer', 
-  `zip` string COMMENT 'from deserializer', 
-  `county` string COMMENT 'from deserializer', 
-  `phone` string COMMENT 'from deserializer', 
-  `measure_name` string COMMENT 'from deserializer', 
-  `measure_id` string COMMENT 'from deserializer', 
-  `measure_response` string COMMENT 'from deserializer', 
-  `footnote` string COMMENT 'from deserializer', 
-  `measure_start_date` string COMMENT 'from deserializer', 
-  `measure_end_date` string COMMENT 'from deserializer')
-ROW FORMAT SERDE 
-  'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
-STORED AS INPUTFORMAT 
-  'org.apache.hadoop.mapred.TextInputFormat' 
-OUTPUTFORMAT 
-  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
-LOCATION
-  'hdfs://localhost:8020/data/w205/hospital_files/Structural_Measures_Hospital';
-
-DROP TABLE timely_care_hos;
-CREATE EXTERNAL TABLE `timely_care_hos`(
+DROP TABLE timely_hos;
+CREATE EXTERNAL TABLE `timely_hos`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
@@ -282,7 +207,7 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Timely_And_Effective_Care_Hospital';
 
-DROP TABLE timely_care_state;
+DROP TABLE timely_state;
 CREATE EXTERNAL TABLE `timely_care_state`(
   `state` string COMMENT 'from deserializer', 
   `condition` string COMMENT 'from deserializer', 
@@ -395,7 +320,66 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Survey_Results';
 
+DROP TABLE readmis_national;
+CREATE EXTERNAL TABLE `readmis_national`(
+  `measure_name` string COMMENT 'from deserializer', 
+  `measure_id` string COMMENT 'from deserializer', 
+  'national_rate' string COMMENT 'from deserializer', 
+  `num_hospitals_worse` string COMMENT 'from deserializer',
+  `num_hospitals_same` string COMMENT 'from deserializer',
+  `num_hospitals_better` string COMMENT 'from deserializer',
+  `num_hospitals_too_few` string COMMENT 'from deserializer', 
+  `footnote` string COMMENT 'from deserializer', 
+  `measure_start_date` string COMMENT 'from deserializer', 
+  `measure_end_date` string COMMENT 'from deserializer')
+ROW FORMAT SERDE 
+  'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  'hdfs://localhost:8020/data/w205/hospital_files/Readmissions_And_Deaths_National';
 
+DROP TABLE complic_national;
+CREATE EXTERNAL TABLE `complic_national`(
+  `measure_name` string COMMENT 'from deserializer', 
+  `measure_id` string COMMENT 'from deserializer',
+  'national_rate' string COMMENT 'from deserializer', 
+  `num_hospitals_worse` string COMMENT 'from deserializer',
+  `num_hospitals_same` string COMMENT 'from deserializer',
+  `num_hospitals_better` string COMMENT 'from deserializer',
+  `num_hospitals_too_few` string COMMENT 'from deserializer', 
+  `footnote` string COMMENT 'from deserializer', 
+  `measure_start_date` string COMMENT 'from deserializer', 
+  `measure_end_date` string COMMENT 'from deserializer')
+ROW FORMAT SERDE 
+  'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  'hdfs://localhost:8020/data/w205/hospital_files/Complications_National';
+
+DROP TABLE timely_national;
+CREATE EXTERNAL TABLE `timely_national`(
+  `measure_name` string COMMENT 'from deserializer', 
+  `measure_id` string COMMENT 'from deserializer', 
+  `condition` string COMMENT 'from deserializer',
+  `category` string COMMENT 'from deserializer',
+  `score` string COMMENT 'from deserializer',
+  `footnote` string COMMENT 'from deserializer', 
+  `measure_start_date` string COMMENT 'from deserializer', 
+  `measure_end_date` string COMMENT 'from deserializer')
+ROW FORMAT SERDE 
+  'org.apache.hadoop.hive.serde2.OpenCSVSerde' 
+STORED AS INPUTFORMAT 
+  'org.apache.hadoop.mapred.TextInputFormat' 
+OUTPUTFORMAT 
+  'org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat'
+LOCATION
+  'hdfs://localhost:8020/data/w205/hospital_files/Timely_And_Effective_Care_National';
 
 
 
