@@ -208,7 +208,7 @@ LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Timely_And_Effective_Care_Hospital';
 
 DROP TABLE timely_state;
-CREATE EXTERNAL TABLE `timely_care_state`(
+CREATE EXTERNAL TABLE `timely_state`(
   `state` string COMMENT 'from deserializer', 
   `condition` string COMMENT 'from deserializer', 
   `measure_name` string COMMENT 'from deserializer', 
