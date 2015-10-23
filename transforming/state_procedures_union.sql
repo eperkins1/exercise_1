@@ -14,6 +14,6 @@ DROP TABLE state_procedures;
 CREATE TABLE state_procedures AS
 SELECT state, measure_id, measure_name, num_hospitals_better, num_hospitals_worse, Null as score
 FROM complic_readmis
-UNION
+UNION ALL
 SELECT state, measure_id, measure_name, Null as num_hospitals_better, Null as num_hospitals_worse, score
 FROM timely_state;
