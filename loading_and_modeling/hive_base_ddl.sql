@@ -142,8 +142,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/HCAPS_Hospital';
 
-DROP TABLE hospitals;
-CREATE EXTERNAL TABLE `hospitals`(
+DROP TABLE hospitals_initial;
+CREATE EXTERNAL TABLE `hospitals_initial`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer', 
   `address` string COMMENT 'from deserializer', 
@@ -276,8 +276,8 @@ OUTPUTFORMAT
 LOCATION
   'hdfs://localhost:8020/data/w205/hospital_files/Readmissions_And_Deaths_Hospital';
 
-DROP TABLE survey_results;
-CREATE EXTERNAL TABLE `survey_results`(
+DROP TABLE survey_results_initial;
+CREATE EXTERNAL TABLE `survey_results_initial`(
   `provider_id` string COMMENT 'from deserializer', 
   `hospital_name` string COMMENT 'from deserializer',
   `address` string COMMENT 'from deserializer',
