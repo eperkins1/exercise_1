@@ -1,6 +1,71 @@
-I conclude that the best states are the following 10:
+I conclude that the best states are the following 10, who appear in both of the top 25 lists described below:
 
+AZ
+CA
+DE
+HI
+MA
+ME
+NH
+NM
+TX
+VT
 
-My conclusions are based on the following criteria:
+My conclusions are based on the intersection of the following tables:
 
+Top 25 States by difference between average number of better hospitals and average number of worse hospitals for complications and readmissions and deaths measures:
+TX	0.8571428571428568
+MA	0.8095238095238095
+CA	0.7619047619047619
+AZ	0.4285714285714287
+MN	0.33333333333333337
+MT	0.2857142857142857
+SD	0.2857142857142857
+IN	0.2857142857142856
+IA	0.23809523809523803
+DE	0.14285714285714285
+CO	0.1428571428571428
+ME	0.09523809523809523
+ND	0.047619047619047616
+HI	0.047619047619047616
+ID	0.047619047619047616
+VT	0.047619047619047616
+WY	0.047619047619047616
+NH	0.047619047619047616
+NE	0.04761904761904756
+VI	0.0
+AS	0.0
+OR	0.0
+NM	-0.047619047619047616
+WI	-0.04761904761904767
+KS	-0.04761904761904767
 
+Top 25 states by average timely and effective care scores:
+DC	138.47457627118644
+DE	127.33898305084746
+NY	115.77272727272727
+GU	115.69565217391305
+NM	115.35384615384615
+MD	115.16176470588235
+CT	114.39393939393939
+NJ	112.65151515151516
+PR	111.96875
+NV	111.0909090909091
+CA	109.92753623188406
+MA	108.21212121212122
+ME	107.83076923076923
+RI	107.0
+VT	104.37704918032787
+HI	104.09836065573771
+AZ	103.65151515151516
+NC	103.17391304347827
+FL	102.8695652173913
+NH	102.75409836065573
+AK	102.56451612903226
+WV	101.62121212121212
+GA	101.54545454545455
+PA	101.28787878787878
+TX	101.01449275362319
+
+Why this is a valid criterion:
+Importantly, I consider timely and effective care scores to be somewhat independent from measures related to complications, readmissions and deaths. Whereas timely and effective care is a measure of patient experience quality, complications, readmissions and deaths seems to measure something different. The latter attempts to capture the effectiveness of the diagnoses from doctors, presecriptions assigned, and of the procedures that take place. It is perfectly possible for a hospital to have terrible wait times and patient experience of going to the hospital, while also having top tier doctors and surgeries, such that the patients who are treated are less likely to suffer from health problems than at other hospitals, which might well have better timely and effective care measures. Crucially, both patient experience (timely and effective care) and avoidance of health issues (complications, readmissions and deaths) contribute significantly to a hospital's quality, and the above states are above average performers in both categories. 
