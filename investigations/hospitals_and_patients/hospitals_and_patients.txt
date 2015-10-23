@@ -1,0 +1,1 @@
+Average scores for hospital quality are correlated with patient survey responses.
