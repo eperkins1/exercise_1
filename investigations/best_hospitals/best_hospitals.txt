@@ -1,1 +1,34 @@
-The best hospitals are chosen largely based on survey data, found in survey results.
+The best hospitals are found to be the following:
+
+HOSP COMUNITARIO BUEN SAMARITANO
+UNIVERSITY HEALTH SYSTEM	
+HOSPITAL HERMANOS MELENDEZ INC	
+FALLS COMMUNITY HOSPITAL AND CLINIC	
+BON SECOURS HOSPITAL	
+UNIVERSITY OF LOUISVILLE HOSPITAL	
+UF HEALTH JACKSONVILLE	
+JACKSON MEMORIAL HOSPITAL	
+UNIVERSITY HOSPITAL	
+GRADY MEMORIAL HOSPITAL	
+
+The criteria were as follows:
+
+I analyzed timely and effective care average scores for sufficient samples for each hospital (>100 is sufficient, in this case), and did the same with combined data from complications and readmissions and deaths. Complications and readmissions and deaths were combined since they are quite qualitatively similar in what they measure, in my view, at least much more so than their similarity to timely and effective care measures. I thought it was reasonable to award a "best hospital" spot to the top achievers in both of the two categories (timely and effective care, and complications readmission and deaths). The top hospitals were as follows:
+
+Timely and effective care: FALLS COMMUNITY HOSPITAL AND CLINIC 320.25
+Complications, readmissions and deaths: UNIVERSITY HEALTH SYSTEM 28.8333
+
+For the next eight spots, I thought it was most sensible to use a "total score" measure, which is a multiple of the t_e_c score and the c_r_d score, as hospitals who achieve in both categories and don't put all their eggs in one basket are probably most quintessentially "models of health care".
+
+As such, the remaining eight are in the following list of top 10 total scores, which includes the prior two:
+
+HOSP COMUNITARIO BUEN SAMARITANO	3635.625
+UNIVERSITY HEALTH SYSTEM	3624.35
+HOSPITAL HERMANOS MELENDEZ INC	2755.714285714286
+FALLS COMMUNITY HOSPITAL AND CLINIC	2690.1
+BON SECOURS HOSPITAL	2652.0
+UNIVERSITY OF LOUISVILLE HOSPITAL	2636.4449999999997
+UF HEALTH JACKSONVILLE	2602.695
+JACKSON MEMORIAL HOSPITAL	2599.560810810811
+UNIVERSITY HOSPITAL	2595.7685185185187
+GRADY MEMORIAL HOSPITAL	2493.3695652173915
