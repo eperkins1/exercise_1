@@ -20,3 +20,5 @@ As w205 in AMI
 For each to-be-hive-tabeled csv file$ in hdfs:
 	hdfs dfs -mkdir /data/w205/hospital_files/<file$_without_.csv>
 	hdfs dfs -mv /data/w205/hospital_files/file$ /data/w205/hospital_files/<file$_without_.csv>/file$
+
+After this is performed, tables can be built on the single file directories according to hive_base_ddl.sql
